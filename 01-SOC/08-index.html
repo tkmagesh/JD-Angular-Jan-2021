@@ -75,6 +75,7 @@
         //view
         function SalaryCalculator(model){
 
+            //presenation
             var template = `
                 <section>
                     <div class="field">
@@ -118,6 +119,7 @@
                 $root.html(template);
             };
 
+            //reacting to user actions
             $root.on('change', '#txtBasic', function () {
                 model.set('basic', $(this).val().toInt());
             });
@@ -159,6 +161,7 @@
                 $('#tdTax', $root).text(model.get('tax'));
             });
         }
+        
         //this function will be executed when the document is loaded
         $(function(){
             
