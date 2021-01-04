@@ -1,0 +1,44 @@
+RIA
+    Rich Internet Applications
+    Applications - Dynamic
+    More Interactive
+    Client Driven (Run in the browser)
+    User Experience (UX)
+
+CWA
+    Classical Web Application
+    Server Driven
+    The complete application (with all the below layers are in the server)
+
+Application Layers
+
+    User Interface (UI Layer)
+        Controllers
+        Views
+        Models
+
+    Domain Layer (Business Logic Layer)
+    Repository Layer (Data Access Layer)
+
+
+PoEAA (Patterns of Enterprise Application Architecture)
+
+Browser
+    UI (HTML DOM CSS) (UI Frameworks like Angular, React, Vue, Backbone)
+    Infrastructure (HTML5) (caniuse.com)
+        Storage
+            Local Storage`
+            Session Storage
+            IndexedDB
+        Server Sent Events
+        Web Sockets
+        Web RTC
+        Device
+
+Maintainability (Effort needed to make changes)
+    Fix bugs
+    add new features
+    remove dead code
+    optimize existing functionality
+
+Separation of Concerns

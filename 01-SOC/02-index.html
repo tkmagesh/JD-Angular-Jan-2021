@@ -26,29 +26,48 @@
             return parseInt(this, 10);
         };
 
+        //state & behavior
+        //NON UI
+        function SalaryCalculatorModel(){
+            //state
+            this.basic = 0;
+            this.hra = 0;
+            this.da = 0;
+            this.tax = 0;
+            this.salary = 0;
+        }
+
+        //behavior
+        SalaryCalculatorModel.prototype.calculate = function(){
+            var gross = this.basic + this.hra + this.da,
+                net = gross * ((100-this.tax)/100);
+            this.salary = net;
+        }
+
         //this function will be executed when the document is loaded
         $(function(){
             
+            var model = new SalaryCalculatorModel();
+
             //assign an event handler to the 'calculate' button
             //UI
             $('#btnCalculate').click(function(){
 
                 //access the data from the textboxes and convert them into number
-                var basic = $('#txtBasic').val().toInt(),
-                    hra = $('#txtHra').val().toInt(),
-                    da = $('#txtDa').val().toInt(),
-                    tax = $('#rangeTax').val().toInt();
+                model.basic = $('#txtBasic').val().toInt();
+                model.hra = $('#txtHra').val().toInt();
+                model.da = $('#txtDa').val().toInt();
+                model.tax = $('#rangeTax').val().toInt();
 
                 //calculate the salary
-                var gross = basic + hra + da,
-                    net = gross * ((100-tax)/100);
+                model.calculate();
 
                 //display the result
-                $('#tdBasic').text(basic);
-                $('#tdHra').text(hra);
-                $('#tdDa').text(da);
-                $('#tdTax').text(tax);
-                $('#tdSalary').text(net);
+                $('#tdBasic').text(model.basic);
+                $('#tdHra').text(model.hra);
+                $('#tdDa').text(model.da);
+                $('#tdTax').text(model.tax);
+                $('#tdSalary').text(model.salary);
 
             });
         });
