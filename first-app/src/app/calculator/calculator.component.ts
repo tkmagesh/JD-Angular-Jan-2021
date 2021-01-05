@@ -16,19 +16,19 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddClick(){
+  onAddClick() : void {
     this.result = this.n1 + this.n2;
   }
 
-  onSubtractClick(){
+  onSubtractClick(): void {
     this.result = this.n1 - this.n2;
   }
 
-  onMultiplyClick(){
+  onMultiplyClick(): void {
     this.result = this.n1 * this.n2;
   }
 
-  onDivideClick(){
+  onDivideClick(): void {
     this.result = this.n1 / this.n2;
   }
 }
