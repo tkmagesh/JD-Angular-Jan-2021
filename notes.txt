@@ -136,4 +136,17 @@ Assignment
     Study the following methods of 'Array' in javascript
         - map, reduce, filter, forEach
 
-        
+
+Angular CLI
+Node.js (to provide the runtime for angular cli)
+
+JS Module Systems
+    AMD (Asynchronous Module Definition)
+    CommonJS (used in node.js)
+    ES6 modules
+
+ES6 Modules
+    - Everything defined in a JS/TS file is considered private by default
+    - Anything to be exposed publicly has to be explicity 'exported'
+    - Anything to be used from another module (ES6) has to be explicity 'imported'
+      
