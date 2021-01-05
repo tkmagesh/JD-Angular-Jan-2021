@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   
   //regiter the UI entites of the application (Directives, Pipes & Components)
   declarations: [
     AppComponent,
-    GreeterComponent
+    GreeterComponent,
+    CalculatorComponent
   ],
 
   //regiter the module dependencies
