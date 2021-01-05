@@ -49,7 +49,7 @@ Separation of Concerns
 
 Angular Building Blocks
     1. Component
-        - encapsulates Presentation + User Interaction + Data
+        - encapsulates Presentation + User Interaction Logic + Data
 
     2. Pipe
         - data transformation logic for Presentation
