@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { GreeterComponent } from './greeter/greeter.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 
+import { CalculatorService } from './calculator/calculator.service';
+
 @NgModule({
   
   //regiter the UI entites of the application (Directives, Pipes & Components)
@@ -20,7 +22,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
   ],
 
   //register the NON UI entites (services)
-  providers: [],
+  providers: [
+    CalculatorService
+  ],
 
   //Top level component(s) in the component tree
   bootstrap: [

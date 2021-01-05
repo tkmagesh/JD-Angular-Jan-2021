@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CalculatorService } from './calculator.service';
+
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -11,24 +13,34 @@ export class CalculatorComponent implements OnInit {
   n2 : number = 0;
   result : number = 0;
 
-  constructor() { }
+  /* 
+  calculatorService : CalculatorService;
+
+  constructor( calculatorService : CalculatorService) { 
+    this.calculatorService = calculatorService;
+  } 
+  */
+
+  constructor(private calculatorService : CalculatorService){
+    
+  }
 
   ngOnInit(): void {
   }
 
   onAddClick() : void {
-    this.result = this.n1 + this.n2;
+    this.result = this.calculatorService.add(this.n1, this.n2);
   }
 
   onSubtractClick(): void {
-    this.result = this.n1 - this.n2;
+    this.result = this.calculatorService.subtract(this.n1, this.n2);
   }
 
   onMultiplyClick(): void {
-    this.result = this.n1 * this.n2;
+    this.result = this.calculatorService.multiply(this.n1, this.n2);
   }
 
   onDivideClick(): void {
-    this.result = this.n1 / this.n2;
+    this.result = this.calculatorService.divide(this.n1, this.n2);
   }
 }
