@@ -7,11 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  productNames : string[] = [ 'Pen', 'Pencil', 'Marker', 'Scribble Pad'];
-  
+  productNames : string[] = [ ];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onAddNewClick(newProductName : string){
+    this.productNames.push(newProductName);
+  }
+
+  onRemoveClick(productName : string){
+    this.productNames = this.productNames.filter(pName => pName !== productName);
+  }
 }
