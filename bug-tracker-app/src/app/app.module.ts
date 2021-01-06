@@ -6,6 +6,7 @@ import { BugTrackerComponent } from './bug-tracker/bug-tracker.component';
 
 import { TrimTextPipe } from './bug-tracker/pipes/trimText.pipe';
 
+import { BugOperationsService } from './bug-tracker/services/bugOperations.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { TrimTextPipe } from './bug-tracker/pipes/trimText.pipe';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    BugOperationsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
