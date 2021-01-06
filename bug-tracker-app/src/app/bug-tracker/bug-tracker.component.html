@@ -22,7 +22,7 @@
         <li *ngFor="let bug of bugs">
             <span class="bugname">{{bug}}</span>
             <div class="datetime">[Created At]</div>
-            <input type="button" value="Remove">
+            <input type="button" value="Remove" (click)="onRemoveClick(bug)">
         </li>
         <!-- 
         <li>

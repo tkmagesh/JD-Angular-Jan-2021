@@ -17,5 +17,9 @@ export class BugTrackerComponent implements OnInit {
   onAddNewClick(newBugName : string){
     this.bugs.push(newBugName);
   }
-  
+
+  onRemoveClick(bugName : string){
+    this.bugs = this.bugs.filter(bug => bug !== bugName);
+  }
+
 }
