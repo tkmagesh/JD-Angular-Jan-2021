@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BugTrackerComponent implements OnInit {
 
+  bugs : string[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onAddNewClick(newBugName : string){
+    this.bugs.push(newBugName);
+  }
+  
 }
