@@ -15,6 +15,10 @@ export class BugTrackerComponent implements OnInit {
   constructor( private bugOperations : BugOperationsService) { }
 
   ngOnInit(): void {
+    this.bugs.push({id : 1, name : 'Server communication failure', isClosed : false, createdAt : new Date(2021, 0, 4)})
+    this.bugs.push({id : 2, name : 'User actions not recognised', isClosed : true, createdAt : new Date(2020, 11, 4)})
+    this.bugs.push({id : 3, name : 'Data integrity checks failed', isClosed : false, createdAt : new Date(2021, 0, 1)})
+    this.bugs.push({id : 4, name : 'Application not responding', isClosed : true, createdAt : new Date(2020, 10, 10)})
   }
 
   onAddNewClick(newBugName : string){

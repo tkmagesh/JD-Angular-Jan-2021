@@ -7,8 +7,10 @@
 <section class="sort">
     <label for="">Order By :</label>
     <select name="" id="">
-        <option value=""></option>
-        <option value=""></option>
+        <option value="id">Id</option>
+        <option value="name">Name</option>
+        <option value="isClosed">Status</option>
+        <option value="createdAt">Created</option>
     </select>
     <label for="">Descending ? :</label>
     <input type="checkbox" name="" id="">
@@ -27,7 +29,8 @@
             >
                 {{bug.name | trimText}}
             </span>
-            <div class="datetime">[Created At]</div>
+            <span> - [ {{bug.id}} ]</span>
+            <div class="datetime">[{{bug.createdAt}}]</div>
             <input type="button" value="Remove" (click)="onRemoveClick(bug)">
         </li>
     </ol>
