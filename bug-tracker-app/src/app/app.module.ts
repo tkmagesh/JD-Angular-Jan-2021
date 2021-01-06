@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { BugTrackerComponent } from './bug-tracker/bug-tracker.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BugTrackerComponent
   ],
   imports: [
     BrowserModule
