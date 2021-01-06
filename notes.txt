@@ -150,3 +150,13 @@ ES6 Modules
     - Anything to be exposed publicly has to be explicity 'exported'
     - Anything to be used from another module (ES6) has to be explicity 'imported'
       
+
+Directives
+    - Attribute Directive
+        - manipulates the attributes of an EXISTING dom node
+        - DO NOT change the structure of the DOM TREE
+        - used by wrapping with []
+
+    - Structural Directive
+        - CHANGES the structure of the DOM tree by adding / removing DOM nodes
+        - used by prefixing with an '*' (shortcut)
