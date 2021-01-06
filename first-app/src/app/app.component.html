@@ -5,9 +5,8 @@
 <input type="button" value="Calculator" (click)="userChoice = 'calculator'">
 <br>
 
-<app-greeter *ngIf="userChoice == 'greeter'"></app-greeter>
-<app-calculator *ngIf="userChoice == 'calculator'"></app-calculator>
-
-<!-- the following should be displayed when the page is loaded and no choice is selected by the user -->
-<!-- use ngSwitch (instead of ngIf) -->
-<div>Select your choice</div>
+<div [ngSwitch]="userChoice">
+    <app-greeter *ngSwitchCase="'greeter'"></app-greeter>
+    <app-calculator *ngSwitchCase="'calculator'"></app-calculator>
+    <div *ngSwitchDefault>Select your choice</div>
+</div>
