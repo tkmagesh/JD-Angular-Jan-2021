@@ -11,6 +11,7 @@ export class AppComponent {
   //Data to be presented
   title = 'first-app';
   currentTime = Date();
+  userChoice = '';
 
   constructor(){
     setTimeout(() => {

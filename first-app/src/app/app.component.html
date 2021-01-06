@@ -1,8 +1,13 @@
 <h1>My App</h1>
 <div>{{currentTime}}</div>
 <hr>
-<input type="button" value="Greeter">
-<input type="button" value="Calculator">
+<input type="button" value="Greeter" (click)="userChoice = 'greeter'">
+<input type="button" value="Calculator" (click)="userChoice = 'calculator'">
 <br>
-<app-greeter></app-greeter>
-<app-calculator></app-calculator>
+
+<app-greeter *ngIf="userChoice == 'greeter'"></app-greeter>
+<app-calculator *ngIf="userChoice == 'calculator'"></app-calculator>
+
+<!-- the following should be displayed when the page is loaded and no choice is selected by the user -->
+<!-- use ngSwitch (instead of ngIf) -->
+<div>Select your choice</div>
