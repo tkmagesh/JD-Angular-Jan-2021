@@ -30,4 +30,15 @@ export class BugTrackerComponent implements OnInit {
     this.bugs = this.bugs.filter(bug => bug !== bugToRemove);
   }
 
+  onBugNameClick(bugToToggle : Bug){
+    bugToToggle.isClosed = !bugToToggle.isClosed;
+  }
+
+  onRemoveClosedClick(){
+    this.bugs = this.bugs.filter(bug => !bug.isClosed);
+  }
+
+  getClosedCount() : number {
+    return this.bugs.reduce((result, bug) => bug.isClosed ? result + 1 : result, 0);
+  }
 }
