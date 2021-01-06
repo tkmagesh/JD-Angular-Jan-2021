@@ -6,6 +6,7 @@ import { GreeterComponent } from './greeter/greeter.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 
 import { CalculatorService } from './calculator/calculator.service';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   
@@ -13,7 +14,8 @@ import { CalculatorService } from './calculator/calculator.service';
   declarations: [
     AppComponent,
     GreeterComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    ProductsComponent
   ],
 
   //regiter the module dependencies

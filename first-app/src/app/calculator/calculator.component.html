@@ -1,12 +1,15 @@
 <h3>Calculator</h3>
 <hr>
+
+<input type="number" #txtN1 (input)="n1 = txtN1.valueAsNumber">
+<input type="number" #txtN2 (input)="n2 = txtN2.valueAsNumber"> 
+
+<!-- TO BE FIXED -->
 <!-- 
-    <input type="number" #txtN1 (input)="n1 = txtN1.valueAsNumber">
-    <input type="number" #txtN2 (input)="n2 = txtN2.valueAsNumber"> 
--->
-<input type="number" (input)="n1 = $event.target.valueAsNumber">
-<input type="number" (input)="n2 = $event.target.valueAsNumber">
-<br>
+<input type="number" (input)="n1 = $event.target?.value ? $event.target?.value * 1 : 0">
+<input type="number" (input)="n2 = $event.target?.value ? $event.target?.value * 1 : 0">
+ -->
+ <br>
 <input type="button" value="Add" (click)="onAddClick()" >
 <input type="button" value="Subtract" (click)="onSubtractClick()">
 <input type="button" value="Multiply" (click)="onMultiplyClick()">

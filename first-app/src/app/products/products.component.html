@@ -1,0 +1,11 @@
+<h3>Products</h3>
+<hr>
+<ol>
+    <li 
+        *ngFor="let productName of productNames; index as i; count as total; odd as odd; even as even"
+        [ngClass]="{oddStyle : odd, evenStyle : even}"
+    >
+        {{productName}} - [{{i + 1}}/{{total}}]
+    </li>
+    
+</ol>

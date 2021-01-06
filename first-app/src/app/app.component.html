@@ -3,10 +3,12 @@
 <hr>
 <input type="button" value="Greeter" (click)="userChoice = 'greeter'">
 <input type="button" value="Calculator" (click)="userChoice = 'calculator'">
+<input type="button" value="Products" (click)="userChoice = 'products'">
 <br>
 
 <div [ngSwitch]="userChoice">
     <app-greeter *ngSwitchCase="'greeter'"></app-greeter>
     <app-calculator *ngSwitchCase="'calculator'"></app-calculator>
+    <app-products *ngSwitchCase="'products'"></app-products>
     <div *ngSwitchDefault>Select your choice</div>
 </div>
