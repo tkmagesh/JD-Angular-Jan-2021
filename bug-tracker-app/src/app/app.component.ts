@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentTime = new Date()
+  /* currentTime = new Date() */
   title = 'bug-tracker-app';
 
   constructor(){
-    setInterval(() => {
+    /* setInterval(() => {
       this.currentTime = new Date();
-    }, 1000)
+    }, 1000) */
   }
 }
