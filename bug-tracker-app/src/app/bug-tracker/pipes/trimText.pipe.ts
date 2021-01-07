@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from "@angular/core";
     name : 'trimText'
 })
 export class TrimTextPipe implements PipeTransform {
-    transform(data : string) : string {
-        return data.length > 30 ? data.substr(0,30 ) + '...' : data;
+    transform(data : string, textLength : number = 30) : string {
+        return data.length > textLength ? data.substr(0,textLength) + '...' : data;
     }
 }

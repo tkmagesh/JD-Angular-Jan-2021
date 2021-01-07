@@ -27,7 +27,7 @@
                 [ngClass]="{closed : bug.isClosed}"
                 (click)="onBugNameClick(bug)"
             >
-                {{bug.name | trimText}}
+                {{bug.name | trimText:40}}
             </span>
             <span> - [ {{bug.id}} ]</span>
             <div class="datetime">[{{bug.createdAt}}]</div>
