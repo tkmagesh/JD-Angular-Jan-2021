@@ -9,6 +9,7 @@ import { SortPipe } from './bug-tracker/pipes/sort.pipe';
 
 import { ClosedCountPipe } from './bug-tracker/pipes/closedCount.pipe';
 import { BugOperationsService } from './bug-tracker/services/bugOperations.service';
+import { BugStorageService } from './bug-tracker/services/bugStorage.service';
 
 import { BugStatsComponent } from './bug-tracker/views/bug-stats/bug-stats.component'
 import { BugEditComponent } from './bug-tracker/views/bug-edit/bug-edit.component';
@@ -28,6 +29,7 @@ import { BugEditComponent } from './bug-tracker/views/bug-edit/bug-edit.componen
   ],
   providers: [
     BugOperationsService
+    , BugStorageService
   ],
   bootstrap: [AppComponent]
 })

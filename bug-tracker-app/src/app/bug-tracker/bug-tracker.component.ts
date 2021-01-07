@@ -17,10 +17,11 @@ export class BugTrackerComponent implements OnInit {
   constructor( private bugOperations : BugOperationsService) { }
 
   ngOnInit(): void {
-    
+    this.bugs = this.bugOperations.getAll();
   }
 
   onRemoveClick(bugToRemove : Bug){
+    this.bugOperations.remove(bugToRemove);
     this.bugs = this.bugs.filter(bug => bug !== bugToRemove);
   }
 
@@ -30,7 +31,9 @@ export class BugTrackerComponent implements OnInit {
   }
 
   onRemoveClosedClick(){
-    this.bugs = this.bugs.filter(bug => !bug.isClosed);
+    this.bugs
+      .filter(bug => bug.isClosed)
+      .forEach(closedBug => this.onRemoveClick(closedBug));
   }
 
   onNewBugAdded(newBug : Bug){
