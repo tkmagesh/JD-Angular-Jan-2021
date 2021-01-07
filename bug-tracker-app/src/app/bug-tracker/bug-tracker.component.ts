@@ -10,7 +10,8 @@ import { BugOperationsService } from './services/bugOperations.service';
 export class BugTrackerComponent implements OnInit {
 
   bugs : Bug[] = [];
-  
+  sortAttr : string = 'id';
+  isDesc : boolean = false;
 
   constructor( private bugOperations : BugOperationsService) { }
 

@@ -6,14 +6,14 @@
 </section>
 <section class="sort">
     <label for="">Order By :</label>
-    <select name="" id="">
+    <select #selectSortAttr (change)="sortAttr = selectSortAttr.value">
         <option value="id">Id</option>
         <option value="name">Name</option>
         <option value="isClosed">Status</option>
         <option value="createdAt">Created</option>
     </select>
     <label for="">Descending ? :</label>
-    <input type="checkbox" name="" id="">
+    <input type="checkbox" #chkSortByDesc (change)="isDesc = chkSortByDesc.checked">
 </section>
 <section class="edit">
     <label for="">Bug Name :</label>
@@ -22,7 +22,7 @@
 </section>
 <section class="list">
     <ol>
-        <li *ngFor="let bug of bugs">
+        <li *ngFor="let bug of bugs|sort:sortAttr:isDesc">
             <span class="bugname" 
                 [ngClass]="{closed : bug.isClosed}"
                 (click)="onBugNameClick(bug)"
