@@ -12,7 +12,7 @@ export class BugTrackerComponent implements OnInit {
   bugs : Bug[] = [];
   sortAttr : string = 'id';
   isDesc : boolean = false;
-  newBugName : string = '';
+  
 
   constructor( private bugOperations : BugOperationsService) { }
 
@@ -21,12 +21,6 @@ export class BugTrackerComponent implements OnInit {
     this.bugs.push({id : 2, name : 'User actions not recognised', isClosed : true, createdAt : new Date(2020, 11, 4)})
     this.bugs.push({id : 3, name : 'Data integrity checks failed', isClosed : false, createdAt : new Date(2021, 0, 1)})
     this.bugs.push({id : 4, name : 'Application not responding', isClosed : true, createdAt : new Date(2020, 10, 10)})
-  }
-
-  onAddNewClick(){
-    const newBug = this.bugOperations.createNew(this.newBugName);
-    //this.bugs.push(newBug);
-    this.bugs = [...this.bugs, newBug];
   }
 
   onRemoveClick(bugToRemove : Bug){
@@ -42,7 +36,8 @@ export class BugTrackerComponent implements OnInit {
     this.bugs = this.bugs.filter(bug => !bug.isClosed);
   }
 
-  getClosedCount() : number {
-    return this.bugs.reduce((result, bug) => bug.isClosed ? result + 1 : result, 0);
+  onNewBugAdded(newBug : Bug){
+    this.bugs = [...this.bugs, newBug];
   }
+ 
 }
