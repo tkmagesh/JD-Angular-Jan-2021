@@ -1,0 +1,33 @@
+{
+  "bugs": [
+    {
+      "id": 1,
+      "name": "Server communicaiton failure",
+      "isClosed": false,
+      "createdAt": "2020-12-11T08:52:54.021Z"
+    },
+    {
+      "id": 2,
+      "name": "Component not rendered",
+      "isClosed": true,
+      "createdAt": "2020-12-11T09:23:55.416Z"
+    },
+    {
+      "id": 3,
+      "name": "Data integrity checks failed",
+      "isClosed": false,
+      "createdAt": "2020-12-11T10:39:20.648Z",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur aliquam id pariatur ipsa expedita nesciunt doloribus facilis architecto quisquam totam veniam odio, minima, labore deleniti, neque nam quia amet eveniet."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Bug Tracker"
+    },
+    {
+      "id": 2,
+      "name": "Payroll Master"
+    }
+  ]
+}
