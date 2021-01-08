@@ -259,3 +259,6 @@ Rx.Net
             scan
             merge
 rxjs
+
+Assignment
+    Create the UI for projects (listing from server and adding new projects) in the same application
