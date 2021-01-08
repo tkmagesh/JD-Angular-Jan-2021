@@ -13,8 +13,43 @@ export class BugTrackerComponent implements OnInit {
   sortAttr : string = 'id';
   isDesc : boolean = false;
   
-
   constructor( private bugOperations : BugOperationsService) { }
+
+  ngOnInit(): void {
+    this.bugOperations
+      .getAll()
+      .subscribe(bugs => this.bugs = bugs);
+  }
+
+  onRemoveClick(bugToRemove : Bug){
+    this.bugOperations
+      .remove(bugToRemove)
+      .subscribe(_ => {
+        this.bugs = this.bugs.filter(bug => bug !== bugToRemove);
+      })
+    
+  }
+
+  onBugNameClick(bugToToggle : Bug){
+    this.bugOperations
+      .toggle(bugToToggle)
+      .subscribe(toggledBug => {
+        this.bugs = this.bugs.map(bug => bug === bugToToggle ? toggledBug : bug);
+      });
+  }
+
+  onRemoveClosedClick(){
+    this.bugs
+      .filter(bug => bug.isClosed)
+      .forEach(closedBug => this.onRemoveClick(closedBug));
+  }
+
+  onNewBugAdded(newBug : Bug){
+    this.bugs = [...this.bugs, newBug];
+  }
+
+  //using the localStorage
+  /* constructor( private bugOperations : BugOperationsService) { }
 
   ngOnInit(): void {
     this.bugs = this.bugOperations.getAll();
@@ -38,6 +73,6 @@ export class BugTrackerComponent implements OnInit {
 
   onNewBugAdded(newBug : Bug){
     this.bugs = [...this.bugs, newBug];
-  }
+  } */
  
 }
