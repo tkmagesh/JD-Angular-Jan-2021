@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,15 @@ export class AppComponent {
   /* currentTime = new Date() */
   title = 'bug-tracker-app';
 
-  constructor(){
+  constructor(private http : HttpClient) {
     /* setInterval(() => {
       this.currentTime = new Date();
     }, 1000) */
+  }
+
+  ngOnInit() {
+    this.http
+      .get('http://localhost:3000/bugs')
+      .subscribe(response => console.table(response));
   }
 }

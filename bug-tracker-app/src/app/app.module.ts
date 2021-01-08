@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BugTrackerComponent } from './bug-tracker/bug-tracker.component';
@@ -28,6 +29,7 @@ import { BugEditComponent } from './bug-tracker/views/bug-edit/bug-edit.componen
   ],
   imports: [
     BrowserModule
+    , HttpClientModule
   ],
   providers: [
     BugOperationsService

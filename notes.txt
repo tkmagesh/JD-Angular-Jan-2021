@@ -160,3 +160,102 @@ Directives
     - Structural Directive
         - CHANGES the structure of the DOM tree by adding / removing DOM nodes
         - used by prefixing with an '*' (shortcut)
+
+Asynchronous Operation
+    Initiated but not waited for its completion
+
+    callback (singular)
+    event emitter (multiple)
+    promises (singular)
+    async await (singular)
+    observable (multiple)
+
+source of events
+    keyboard (multiple)
+    mouse (multiple)
+    XMLHTTPRequest (singular)
+    setInterval (multiple)
+    web sockets (multiple)
+    server sent events (multiple)
+
+
+Observable = Inverse of Enumerable (generator)
+    where Enumerable = lazy Iterable
+
+
+var list;
+for(let index = 0; count = list.length; index < count; index++){
+    var item = list[index];
+}
+
+class Iterator(){
+    list = [];
+
+    index = 0;
+
+    constructor(data){
+        this.list = data;
+    }
+    next(){
+        ++index;
+        if (index < count) return list[index]
+        return false;
+    }
+}
+
+var iterable = new Iterator(list);
+var item = iterable.next()
+
+function getEvenNos(howMany){
+    returning howMany even numbers;
+}
+
+30 engineers
+    Specialized in Java
+    min 5 years experience
+    residing in Pune
+
+3000 resumes
+
+interview 10 candidates = hire 1 candidate
+
+to be interviewed = 300 candidates
+
+filter 300 resumes from the 3000 resumes received
+
+
+Event Driven Applications
+    = An application whose execution flow is driven by events
+
+Employee.dat
+    id, name, doj, email, salary
+
+program to calculate the average salary of employees
+
+    var count = 0
+        total = 0;
+
+    open file;
+    while (read file()){
+        parse the line
+        ++count
+        total += salary
+    }
+    average = total/count;
+    print average
+    close file
+
+
+Event Stream = Occur across a time line one after another
+
+
+Rx.Net
+    Reactive Extensions
+    Observables
+        utility methods
+            filter
+            map
+            reduce
+            scan
+            merge
+rxjs
