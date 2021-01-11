@@ -1,0 +1,46 @@
+<h3>Signup!</h3>
+<hr>
+<form #myForm="ngForm">
+  <div>
+    {{myForm.value | json}}
+  </div>
+  <div class="field">
+    <label for="">User Name :</label>
+    <input 
+      type="text" 
+      #username="ngModel" 
+      required  
+      name="username"
+      minlength="10"  
+      [(ngModel)]="signUpUser.username"
+      [class.invalid]="username.invalid && username.touched"
+    >
+    <div class="error-message" *ngIf="username.invalid && username.touched && username.errors.required">
+      UserName cannot be empty!
+    </div>
+    <div class="error-message" *ngIf="username.invalid && username.touched && username.errors.minlength">
+      UserName should be a minimum of 10 characters!
+    </div>
+
+   <!--  <div>{{username.errors | json}}</div> -->
+
+    <!-- <div>Pristine - {{username.pristine}}</div>
+        <div>Dirty - {{username.dirty}}</div>
+        <div>Touched - {{username.touched}}</div>
+        <div>Untouched - {{username.untouched}}</div>
+        <div>Valid - {{username.valid}}</div>
+        <div>Invalid - {{username.invalid}}</div> 
+    -->
+  </div>
+  <div class="field">
+    <label for="">Email :</label>
+    <input type="text" #email="ngModel" required email name="email" [(ngModel)]="signUpUser.email">
+    <div class="error-message" *ngIf="email.invalid && email.touched && email.errors.required">
+      Email cannot be empty!
+    </div>
+    <div class="error-message" *ngIf="email.invalid && email.touched && email.errors.email">
+      Please enter a valid email address!
+    </div>
+  </div>
+  <input type="submit" value="Save" [disabled]="myForm.invalid">
+</form>

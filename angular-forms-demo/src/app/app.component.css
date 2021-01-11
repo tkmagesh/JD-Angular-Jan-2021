@@ -1,0 +1,13 @@
+.field{
+    margin-bottom : 10px;
+}
+.error-message{
+    color : red;
+}
+.invalid {
+    border-color: red;
+}
+label{
+    display: block;
+    font-weight: bold;
+}

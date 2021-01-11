@@ -292,3 +292,19 @@ http://localhost:4200/products
 URL
 -------------------------#--------------------
     Server                          Client
+
+
+Angular Forms
+
+    Accepting Data
+    Validations
+    Visual Feedback
+    Display error messages
+
+    Template Forms
+        template centric
+        Majority of the code is written in the component template
+
+    Reactive Forms
+        code centric
+        Majority of the code is written in the component class
