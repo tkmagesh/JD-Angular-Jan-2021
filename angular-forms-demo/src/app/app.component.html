@@ -15,10 +15,10 @@
       [(ngModel)]="signUpUser.username"
       [class.invalid]="username.invalid && username.touched"
     >
-    <div class="error-message" *ngIf="username.invalid && username.touched && username.errors.required">
+    <div class="error-message" *ngIf="username.invalid && username.touched && username.errors?.required">
       UserName cannot be empty!
     </div>
-    <div class="error-message" *ngIf="username.invalid && username.touched && username.errors.minlength">
+    <div class="error-message" *ngIf="username.invalid && username.touched && username.errors?.minlength">
       UserName should be a minimum of 10 characters!
     </div>
 
@@ -35,10 +35,10 @@
   <div class="field">
     <label for="">Email :</label>
     <input type="text" #email="ngModel" required email name="email" [(ngModel)]="signUpUser.email">
-    <div class="error-message" *ngIf="email.invalid && email.touched && email.errors.required">
+    <div class="error-message" *ngIf="email.invalid && email.touched && email.errors?.required">
       Email cannot be empty!
     </div>
-    <div class="error-message" *ngIf="email.invalid && email.touched && email.errors.email">
+    <div class="error-message" *ngIf="email.invalid && email.touched && email.errors?.email">
       Please enter a valid email address!
     </div>
   </div>
