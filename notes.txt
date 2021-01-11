@@ -262,3 +262,33 @@ rxjs
 
 Assignment
     Create the UI for projects (listing from server and adding new projects) in the same application
+
+
+http://www.amazon.in
+http://www.amazon.in/electronics
+http://www.amazon.in/electronics/phones
+http://www.amazon.in/electronics/phones/google
+http://www.amazon.in/electronics/phones/google/google-pixel-2
+
+http://www.amazon.in/electronics/phones/google/google-pixel-2/reviews
+
+
+Outlook
+Outlook/Inbox
+Outlook/Inbox/Projects
+Outlook/Inbox/Projects/payroll-master
+Outlook/Inbox/Projects/payroll-master/bugs
+Outlook/Inbox/Projects/payroll-master/bugs/bug-101
+
+Angular
+    Behavior - Desktop Application
+    Technology - Web Application
+
+http://localhost:4200
+http://localhost:4200/calculator
+http://localhost:4200/greeter
+http://localhost:4200/products
+
+URL
+-------------------------#--------------------
+    Server                          Client
