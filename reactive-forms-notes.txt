@@ -1,0 +1,120 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <input formControlName="name" placeholder="Your name">
+  <input formControlName="email" placeholder="Your email">
+  <input formControlName="message" placeholder="Your message">
+
+  <button type="submit">Send</button>
+</form>
+ 
+//class
+import { FormGroup, FormControl } from '@angular/forms';
+
+myForm: FormGroup;
+
+  ngOnInit() {
+    this.myForm = new FormGroup({
+      name: new FormControl('Benedict'),
+      email: new FormControl(''),
+      message: new FormControl('')
+    });
+  }
+
+  onSubmit(form: FormGroup) {
+    console.log('Valid?', form.valid); // true or false
+    console.log('Name', form.value.name);
+    console.log('Email', form.value.email);
+    console.log('Message', form.value.message);
+  }
+
+  Using Form builder
+  import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
+@Component({
+  // ...
+})
+export class AppComponent implements OnInit {
+  myForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.myForm = this.fb.group({
+      name: 'Benedict',
+      email: '',
+      message: ''
+    });
+  }
+
+  // ...
+}
+
+//Validation
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  // ...
+})
+export class AppComponent implements OnInit {
+  myForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+  this.myForm = this.fb.group({
+    name: ['Benedict', Validators.required],
+    email: ['', [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
+    message: ['', [Validators.required, Validators.minLength(15)]]
+  });
+  }
+}
+
+Accessing Form Value & Validity in the Template
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <input formControlName="name" placeholder="Your name">
+
+  <p>Your choosen name: {{ myForm.get('name').value }}</p>
+  <div *ngIf="myForm.get('name').hasError('required')">
+    Oops, please provide a name!
+  </div>
+
+  <input formControlName="email" placeholder="Your email">
+
+  <div *ngIf="myForm.controls.email.hasError('pattern')">
+    Oops, wrong pattern buddy!
+  </div>
+
+  <input formControlName="message" placeholder="Your message">
+
+  <div *ngIf="myForm.controls.message.errors.minlength">
+    Write something longer please!
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">
+    Send
+  </button>
+</form>
+
+
+
+Custom validations
+
+import { AbstractControl, ValidationErrors } from '@angular/forms'
+ 
+export function gte(control: AbstractControl): ValidationErrors | null {
+ 
+    const v=+control.value;
+ 
+    if (isNaN(v)) {
+      return { 'gte': true, 'requiredValue': 10 }
+    }      
+ 
+    if (v <= 10) {
+      return { 'gte': true, 'requiredValue': 10 }
+    } 
+ 
+    return null
+ 
+}

@@ -308,3 +308,7 @@ Angular Forms
     Reactive Forms
         code centric
         Majority of the code is written in the component class
+
+ng-touched & ng-untouched -> whether the control is visited or not
+ng-pristine & ng-dirty -> whether the data in the control is modified or not
+ng-invalid & ng-valid -> whether the data in the control is valid or not
