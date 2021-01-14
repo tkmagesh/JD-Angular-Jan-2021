@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/* import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BugTrackerComponent } from './bug-tracker.component';
 
@@ -23,3 +23,4 @@ describe('BugTrackerComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+ */
