@@ -10,6 +10,13 @@
           "strict": true
         }
       },
+      "i18n": {
+        "locales": {
+          "en": "src/translate/messages.en.xlf",
+          "fr": "src/translate/messages.fr.xlf",
+          "de": "src/translate/messages.de.xlf"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -33,6 +40,15 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": ["en"]
+            },
+            "fr": {
+              "localize": ["fr"]
+            },
+            "de": {
+              "localize": ["de"]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -70,6 +86,15 @@
           "configurations": {
             "production": {
               "browserTarget": "bug-tracker-app:build:production"
+            },
+            "en": {
+              "browserTarget": "bug-tracker-app:build:en"
+            },
+            "fr": {
+              "browserTarget": "bug-tracker-app:build:fr"
+            },
+            "de": {
+              "browserTarget": "bug-tracker-app:build:de"
             }
           }
         },

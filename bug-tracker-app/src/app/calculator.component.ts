@@ -4,8 +4,14 @@ import Calculator from './calculator';
 @Component({
     selector : 'app-calculator',
     template : `
-        <input type="number" #txtN1 (change)="n1 = txtN1.valueAsNumber" />
-        <input type="number" #txtN2 (change)="n2 = txtN2.valueAsNumber" />
+        <div>
+            <label i18n="@@calculator-label-1">Number : 1</label>
+            <input type="number" #txtN1 (change)="n1 = txtN1.valueAsNumber" />
+        </div>
+        <div>
+            <label i18n="@@calculator-label-2">Number : 2</label>
+            <input type="number" #txtN2 (change)="n2 = txtN2.valueAsNumber" />
+        </div>
         <input type="button" value="Add" (click)="onAddClick()">
         <input type="button" value="Subtract" (click)="onSubtractClick()">
         <div>{{result}}</div>
