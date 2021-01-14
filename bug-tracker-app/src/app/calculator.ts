@@ -1,10 +1,12 @@
+import { Injectable } from '@angular/core';
 import Logger from './logger'
 
+@Injectable({
+    providedIn: 'root'
+})
 export default class Calculator{
-    private logger : Logger;
+    constructor(private logger : Logger){
 
-    constructor(logger : Logger){
-        this.logger = logger;
     }
 
     add(x :number, y :number):number{
